@@ -6,6 +6,7 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #061119;
+  overflow: hidden;
 }
 
 .desktop {
@@ -14,7 +15,7 @@ body {
 
 .background {
   width: 100vw;
-  height: 99vh;
+  height: 100vh;
   object-fit:cover;
 }
 
@@ -33,6 +34,30 @@ body {
   cursor: pointer;
 }
 
+.searchApps-Closed {
+  width: 100vw;
+  height: var(--menuHeight);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0);
+  color: rgba(0, 0, 0, 0);
+  margin-top: calc(var(--menuHeight) / -1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition-duration: 0.5s;
+}
+
+.searchApps-Open {
+  width: 100vw;
+  height: calc(var(--menuHeight) + 232px);
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 1);
+  margin-top: calc(calc(var(--menuHeight) + 232px) / -1);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  transition-duration: 0.5s;
+}
+
 .rightClick {
   display: none;
   border: red;
@@ -41,21 +66,107 @@ body {
   position: absolute;
 }
 
-table td {
+.settings-table td {
   font-family: 'Cantarell', sans-serif;
   font-family: 'Fredoka', sans-serif;
   cursor: pointer;
 }
 
-table tr:hover {
+.settings-table tr:hover {
   font-family: 'Cantarell', sans-serif;
   font-family: 'Fredoka', sans-serif;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-table {
+.settings-table {
   width: 200px;
   background-color: white;
   border-radius: 5px;
   border-collapse: collapse;
+}
+
+.settings {
+  display: none;
+  border-radius: 5px;
+  background-color: white;
+  width: 1200px;
+  height: 750px;
+  position: absolute;
+  margin-left: calc(50vw - 600px);
+  margin-top: calc(50vh - 375px);
+}
+
+.currentImg {
+  width: 220px;
+  margin: 90px 150px;
+  border-radius: 10px;
+}
+
+.selectImg {
+  width: 150px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.window-Menu {
+  margin-left: calc(1200px - 90px);
+}
+
+.window-Menu td {
+  width: 10px;
+  height: 20px;
+  border-radius: 100px;
+}
+
+.window-Menu td:hover {
+  background-color: rgba(0, 0, 0, 0.125);
+}
+
+.settings-option {
+  cursor: pointer;
+}
+
+.wallpaper-options {
+  border: 1px solid black;
+  max-width: 100px;
+  overflow: hidden;
+}
+
+.wallpaper-outer {
+  margin-left: calc(1100px - 79%);
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 1100px;
+}
+
+.grid-item {
+  font-size: 30px;
+  text-align: center;
+  width: 150px;
+  height: 150px
+}
+
+.container{
+  width: 400px;
+  height: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: colum;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#display_image {
+  width: 300px;
+  height: 169px;
+  border: 1px solid black;
+  background-position: center;
+  background-size: cover;
 }
